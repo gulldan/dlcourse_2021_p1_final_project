@@ -1,0 +1,8 @@
+aiogram==2.13
+emoji==1.2.0
+redis==3.5.3
+# https://github.com/aio-libs/aioredis-py
+ujson==4.0.2
+orjson==3.5.3
+uvloop==0.15.2
+aiohttp~=3.7.4.post0
