@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 temp/
 video/GNR_checkpoint.pt
+GNR_checkpoint.pt

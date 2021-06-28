@@ -49,9 +49,7 @@ https://www.tiktok.com/@philandmore/video/6805867805452324102
 
 https://m.tiktok.com/v/6805867805452324102.html
 
-Примеры результата работы.
-
-вставить.
+Примеры результата работы в папке [sample](samples/output9.mp4).
 
 
 Setup and manual
@@ -66,6 +64,8 @@ http://zulko.github.io/blog/2014/01/23/making-animated-gifs-from-video-files-wit
 
 Deploy
 ------
+Для работы бота необходимо сначало поднять redis. И потом запустить бота.
+
 # start redis
 docker run --name redis --rm -p 6379:6379 -d redis:alpine
 

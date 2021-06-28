@@ -119,18 +119,20 @@ async def help_handler(message: types.Message):
     await message.answer(msg.help, reply_markup=s.MAIN_KB)
 
 
-@dp.message_handler(lambda message: set([item.url for item in message.entities]).isdisjoint(["url", "text_link"]))
+@dp.message_handler(lambda message: set([item.url for item in message.entities]).isdisjoint(["url", 'textlink']))
 async def video_message(message: types.Message):
     """Ответ на любую ссылку тиктока """
-    await bot.send_message(message.chat.id,
-                           f"загружаю видео - {message.text}",
-                           reply_markup=types.ReplyKeyboardRemove())
-    video_path = download_video(message.text)
-    await bot.send_message(message.chat.id,
-                           "начинаю обработку",
-                           reply_markup=types.ReplyKeyboardRemove())
-    GAN.video(message.text)
-    await message.answer_video(open(f'./output/{video_path}.mp4', 'rb'))
+    for item in message.entities:
+        if item.type in ['url', 'textlink']:
+            await bot.send_message(message.chat.id,
+                                   f"загружаю видео - {message.text}",
+                                   reply_markup=types.ReplyKeyboardRemove())
+            video_path = download_video(message.text)
+            await bot.send_message(message.chat.id,
+                                   "начинаю обработку",
+                                   reply_markup=types.ReplyKeyboardRemove())
+            GAN.video(video_path)
+            await message.answer_video(open(f'./output/{video_path}.mp4', 'rb'))
 
 
 @dp.message_handler()

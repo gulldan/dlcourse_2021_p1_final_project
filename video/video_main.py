@@ -9,10 +9,10 @@ from torchvision import transforms, utils
 from tqdm import tqdm
 
 import copy
-from util import *
+from .util import *
 from PIL import Image
 
-from model import *
+from .model import *
 import moviepy.video.io.ImageSequenceClip
 import scipy
 import cv2

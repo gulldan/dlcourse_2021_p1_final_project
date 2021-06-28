@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from emoji import emojize
 
 
 @dataclass(frozen=True)

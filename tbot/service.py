@@ -1,6 +1,5 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, \
     InlineKeyboardMarkup, InlineKeyboardButton
-from emoji import emojize
 from config import MINUTE
 from database import cache
 from tbot.dialogs import Messages as msg
