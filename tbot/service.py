@@ -10,18 +10,21 @@ MAIN_KB = ReplyKeyboardMarkup(
     one_time_keyboard=True
 ).row(
     KeyboardButton(msg.btn_online),
-    KeyboardButton(msg.btn_config)
+    KeyboardButton(msg.btn_video),
+    KeyboardButton(msg.btn_image),
+
 )
 
-CONFIG_KB = InlineKeyboardMarkup().row(
-    InlineKeyboardButton(msg.config_btn_edit, callback_data='edit_config#')
+TRANSFER_KB = ReplyKeyboardMarkup(
+    resize_keyboard=True,
+    one_time_keyboard=True
+).row(
+    KeyboardButton(msg.style_1),
+    KeyboardButton(msg.style_2),
+    KeyboardButton(msg.style_3),
+    KeyboardButton(msg.style_4),
+    KeyboardButton(msg.style_5),
 )
 
 
-def results_to_text(matches: list) -> str:
-    """
-    Функция генерации сообщения
-    """
-    # логику напишем в следующей части
 
-    return ''

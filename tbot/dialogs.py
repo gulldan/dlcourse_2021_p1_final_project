@@ -5,18 +5,22 @@ from emoji import emojize
 @dataclass(frozen=True)
 class Messages:
     test: str = "Привет {name}. Работаю..."
-    btn_online: str = "Онлайн"
-    btn_config: str = "Настройки"
-    start_new_user: str = "Привет. Я могу сообщать тебе результаты матчей online."
+    btn_online: str = "Описание"
+    btn_video: str = "Видео"
+    btn_image: str = "Изображения"
     start_current_user: str = "Привет. {name} " \
                               "Используй команды или меню внизу для продолжения."
-    help: str = "Этот бот получает два изображения и переносит стиль со второго изображения на первое." \
+    help: str = "Этот бот получает изображение и изменяет стиль, доступно пять стилей." \
     " Бот создан в учебных целях, в рамках итогового проекта - https://stepik.org/course/91157"
 
-    btn_save: str = "Сохранить"
-    config_btn_edit: str = "Изменить"
     main: str = "Что будем делать?"
-    db_saved: str = "Настройки сохранены"
-    cb_limit: str = "Превышен лимит. Падажи"
+    cb_limit: str = "Превышен лимит. Подождите"
     cb_updated: str = "Готово"
     unknown_text: str = "Ничего не понятно, но очень интересно.\nПопробуй команду /help"
+    cancel: str = "Действие отменено"
+
+    style_1: str = "1"
+    style_2: str = "2"
+    style_3: str = "3"
+    style_4: str = "4"
+    style_5: str = "5"
