@@ -101,7 +101,8 @@ async def help_handler(message: types.Message):
 async def video_handler(message: types.Message):
     """Обработка сообщения Видео. Вывод текста и ожидание видео"""
     await message.answer(
-        text='Вы выбрали обработку видео, ожидаю ссылку на тикток, вся обработка занимает около минуты',
+        text='Вы выбрали обработку видео, ожидаю ссылку на тикток, вся обработка занимает около минуты, важно чтобы '
+             'было лицо, например https://www.tiktok.com/@karna.val/video/6838969050505301254',
         reply_markup=types.ReplyKeyboardRemove())
 
 
