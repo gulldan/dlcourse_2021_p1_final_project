@@ -25,6 +25,10 @@ import hashlib
 import os.path
 import ffmpeg
 
+import os
+
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+
 torch.backends.cudnn.benchmark = True
 
 
@@ -133,7 +137,7 @@ class gan_t():
                     in_latent = torch.randn([8, self.latent_dim]).cuda()
                 fake_A2B = self.G_A2B.decode(A2B_content.repeat(8, 1, 1, 1), in_latent)
                 fake_A2B = torch.cat([fake_A2B[:4], frame, fake_A2B[4:]], 0)
-                fake_A2B = utils.make_grid(fake_A2B.cpu(), normalize=True, range=(-1, 1), nrow=3)
+                fake_A2B = utils.make_grid(fake_A2B.cpu(), normalize=True, value_range=(-1, 1), nrow=3)
 
             # concatenate original image top
             fake_A2B = fake_A2B.permute(1, 2, 0).cpu().numpy()

@@ -127,11 +127,13 @@ async def video_message(message: types.Message):
             await bot.send_message(message.chat.id,
                                    f"загружаю видео - {message.text}",
                                    reply_markup=types.ReplyKeyboardRemove())
-            video_path = download_video(message.text)
+            async with asyncio.Lock():
+                video_path = download_video(message.text)
             await bot.send_message(message.chat.id,
                                    "начинаю обработку",
                                    reply_markup=types.ReplyKeyboardRemove())
-            GAN.video(video_path)
+            async with asyncio.Lock():
+                GAN.video(video_path)
             await message.answer_video(open(f'./output/{video_path}.mp4', 'rb'))
 
 
