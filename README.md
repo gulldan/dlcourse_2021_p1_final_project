@@ -7,7 +7,7 @@ Style Transfer Telegram Bot - финальный проект по курсу [D
 
 The goal was to create a telegram bot based on a GAN network that can transfer the style from one image to another prechoosen styles. It was also necessary to deploy the bot to the server, so that the bot could run smoothly and not fall asleep.
 
-The Bot itself: `@STransferBot` (Telegram)
+The Bot itself: `@mk_usefull_bot` (Telegram), now disable
 
 
 Network
