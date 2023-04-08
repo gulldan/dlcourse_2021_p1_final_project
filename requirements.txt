@@ -23,5 +23,5 @@ torchvision==0.9.1+cu111
 pillow==9.0.0
 ipython==7.31.1
 matplotlib
-distributed==2.30.1
+distributed==2021.10.0
 onnxruntime-gpu
